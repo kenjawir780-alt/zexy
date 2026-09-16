@@ -6,7 +6,8 @@ echo "================================"
 echo "       ZEXY TERMUX SETUP"
 echo "================================"
 
-echo "[1/4] Checking architecture..."
+echo
+echo "[1/3] Checking architecture..."
 
 ARCH="$(uname -m)"
 
@@ -18,17 +19,15 @@ fi
 echo "[✓] ARM64 detected"
 
 echo
-echo "[2/4] Updating Termux packages..."
+echo "[2/3] Preparing Termux..."
 
 pkg update -y
 
-echo
-echo "[3/4] Installing required packages..."
-
-pkg install -y python clang make patchelf
+# Runtime utilities yang umum diperlukan
+pkg install -y coreutils
 
 echo
-echo "[4/4] Checking ZEXY..."
+echo "[3/3] Checking ZEXY..."
 
 if [ ! -f "./zexy" ]; then
     echo "[!] File zexy tidak ditemukan."
@@ -42,6 +41,7 @@ echo
 echo "================================"
 echo "       INSTALLATION DONE"
 echo "================================"
+
 echo
 echo "Jalankan dengan:"
 echo

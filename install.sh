@@ -22,20 +22,18 @@ echo
 echo "[2/3] Preparing Termux..."
 
 pkg update -y
-
-# Runtime utilities yang umum diperlukan
 pkg install -y coreutils
 
 echo
 echo "[3/3] Checking ZEXY..."
 
-if [ ! -f "./zexy" ]; then
-    echo "[!] File zexy tidak ditemukan."
-    echo "    Pastikan install.sh berada satu folder dengan zexy."
+if [ ! -f "./ZEXY" ]; then
+    echo "[!] File ZEXY tidak ditemukan."
+    echo "    Pastikan install.sh berada satu folder dengan ZEXY."
     exit 1
 fi
 
-chmod +x ./zexy
+chmod +x ./ZEXY
 
 echo
 echo "================================"
@@ -45,7 +43,7 @@ echo "================================"
 echo
 echo "Jalankan dengan:"
 echo
-echo "    ./zexy"
+echo "    ./ZEXY"
 echo
 
 read -r -p "Jalankan ZEXY sekarang? [y/N] " answer
@@ -53,10 +51,10 @@ read -r -p "Jalankan ZEXY sekarang? [y/N] " answer
 case "$answer" in
     y|Y)
         echo
-        ./zexy
+        ./ZEXY
         ;;
     *)
         echo
-        echo "Oke. Jalankan nanti dengan: ./zexy"
+        echo "Oke. Jalankan nanti dengan: ./ZEXY"
         ;;
 esac
